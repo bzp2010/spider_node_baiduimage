@@ -72,5 +72,11 @@ class DownloaderUtil:
 
 # ------ unit test ------
 
+def test_request_cookie():
+    total = int()
+    s = init_request(proxydict=None)
+
+
+def test_init_request():
 
 # ------ unit test ------
