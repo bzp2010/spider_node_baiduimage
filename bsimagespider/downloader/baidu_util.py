@@ -8,8 +8,18 @@ import w3lib.url
 from w3lib.url import url_query_parameter
 
 # ------ stt interface ------
+
+# @returns: total_images[int] or None for Exception
 def get_total_image_of_baidu_engine(request, keyword=1):
-    BaiduUtil.request_total_images_of_baidu_engine(request, keyword)
+    retry = 0
+    total = BaiduUtil.request_total_images_of_baidu_engine(request, keyword)
+    while total is None:
+        total = BaiduUtil.request_total_images_of_baidu_engine(request, keyword)
+        retry += 1
+        if retry >= 3:
+            total = None
+            break
+    return total
 
 # ------ end interface ------
 
@@ -38,7 +48,7 @@ class BaiduUtil:
         response_dict = None
         try:
             response = s.get(new_url_with_keyword)
-            response_dict = json.loads(response)
+            response_dict = json.loads(response.text)
         except Exception as e:
             logging.info(e)
             logging.info("Total image of baidu request failed. ")
@@ -62,8 +72,25 @@ class BaiduUtil:
 # ------ unit test ------
 
 # depends on util, run util test before this test
-def test_request_total_image_of_baidu():
+def test_good_request_total_image_of_baidu():
     from bsimagespider.downloader import util
-    request =
+    s = util.init_request(proxydict=None)
+    assert s is not None
+    s = util.request_cookie(s)
+    assert s is not None
+    assert hasattr(s, "cookies")
+    assert s.cookies is not None
+    total = get_total_image_of_baidu_engine(s, "滑稽")
+    assert total is not None
+    assert total > 1000
+
+def test_bad_request_total_image_of_baidu():
+    from bsimagespider.downloader import util
+    s = util.init_request(None)
+    assert s is not None
+    s = util.request_cookie(s)
+    assert s is None
+    total = get_total_image_of_baidu_engine(s, "滑稽")
+    assert total is None
 
 # ------ unit test ------

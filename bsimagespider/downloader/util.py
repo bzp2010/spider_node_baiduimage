@@ -8,6 +8,7 @@ import unittest
 
 # ------ stt interface ------
 
+# @returns: the request or None for network error
 def request_cookie(request):
     retry = 0
     s = DownloaderUtil.request_cookie(request)
@@ -16,10 +17,11 @@ def request_cookie(request):
         s = DownloaderUtil.request_cookie(request)
         retry += 1
         if retry >= 3:
+            s = None
             break
     return s
 
-
+# @returns: new request or None for system error,
 def init_request(proxydict=None):
     retry = 0
     s = DownloaderUtil.init_request(proxydict)
@@ -28,6 +30,7 @@ def init_request(proxydict=None):
         s = DownloaderUtil.init_request(proxydict)
         retry += 1
         if retry >= 3:
+            s = None
             break
     return s
 
@@ -64,19 +67,32 @@ class DownloaderUtil:
                 # s.proxies.update(proxies)
                 raise NotImplementedError("Currently proxydict is not supported. ")
         except Exception as e:
+            if type(e) is NotImplementedError:
+                raise NotImplementedError(e)
             logging.info(e)
-            logging.info("network may exploding, cannot initiate a request now. ")
+            logging.info("please check your python environment. ")
             s = 1
         return s
 
 
 # ------ unit test ------
 
+# test with good network condition, if we catch a None, we should raise Exception
 def test_request_cookie():
-    total = int()
     s = init_request(proxydict=None)
+    assert s is not None
 
+    s = request_cookie(s)
+    assert s is not None
+    assert hasattr(s, "cookies")
+    assert s.cookies is not None
 
+# test with good network connection, if we catch a None, we should raise Exception.
 def test_init_request():
+    import pytest
+    with pytest.raises(NotImplementedError):
+        init_request(proxydict=dict(http='socks5://127.0.0.1:1080', https='socks5://127.0.0.1:1080'))
+    r = init_request(None)
+    assert r is not None
 
 # ------ unit test ------
