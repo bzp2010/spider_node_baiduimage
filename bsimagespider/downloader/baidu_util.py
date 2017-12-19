@@ -64,9 +64,6 @@ class BaiduUtil:
             return None
         else:
             return int(total)
-
-
-
 # ------ end private ------
 
 # ------ unit test ------

@@ -42,6 +42,11 @@ class BaiduResponseParser:
 
 # ------ stt unittest ------
 
+def test_good():
+    test_good_get_image_url()
+    test_good_get_image_extension()
+    test_good_get_image_name()
+    test_good_get_image_object_list()
 
 def test_good_get_image_object_list():
     import requests, json

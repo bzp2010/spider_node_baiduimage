@@ -2,19 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c318e180-7eb5-43ee-a3ac-85cfe5f76bf3" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/xetrafhan.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bsimagespider/downloader/stream_file_downloader.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bsimagespider/parser/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bsimagespider/parser/baidu_response_parser.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bsimagespider/storer/data_model.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bsimagespider/storer/image_database.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bsimagespider/uploader/S3Uploader.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bsimagespider/uploader/__init__.py" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/bsimagespider/downloader/.cache/v/cache/lastfailed" afterPath="$PROJECT_DIR$/bsimagespider/downloader/.cache/v/cache/lastfailed" />
       <change beforePath="$PROJECT_DIR$/bsimagespider/downloader/baidu_downloader.py" afterPath="$PROJECT_DIR$/bsimagespider/downloader/baidu_downloader.py" />
+      <change beforePath="$PROJECT_DIR$/bsimagespider/downloader/baidu_util.py" afterPath="$PROJECT_DIR$/bsimagespider/downloader/baidu_util.py" />
+      <change beforePath="$PROJECT_DIR$/bsimagespider/downloader/stream_file_downloader.py" afterPath="$PROJECT_DIR$/bsimagespider/downloader/stream_file_downloader.py" />
       <change beforePath="$PROJECT_DIR$/bsimagespider/downloader/util.py" afterPath="$PROJECT_DIR$/bsimagespider/downloader/util.py" />
+      <change beforePath="$PROJECT_DIR$/bsimagespider/parser/baidu_response_parser.py" afterPath="$PROJECT_DIR$/bsimagespider/parser/baidu_response_parser.py" />
+      <change beforePath="$PROJECT_DIR$/bsimagespider/storer/image_database.py" afterPath="$PROJECT_DIR$/bsimagespider/storer/image_database.py" />
+      <change beforePath="$PROJECT_DIR$/bsimagespider/uploader/S3Uploader.py" afterPath="$PROJECT_DIR$/bsimagespider/uploader/S3Uploader.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,10 +20,24 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/spider_node_baiduimage$stream_file_downloader.coverage" NAME="stream_file_downloader Coverage Results" MODIFIED="1513669492340" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/spider_node_baiduimage$Unnamed.coverage" NAME="utiltest Coverage Results" MODIFIED="1513658182066" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/spider_node_baiduimage$baiduutiltest.coverage" NAME="baiduutiltest Coverage Results" MODIFIED="1513657222924" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/spider_node_baiduimage$baidu_response_parser.coverage" NAME="baidu_response_parser Coverage Results" MODIFIED="1513665793522" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/spider_node_baiduimage$private_s3_uploader_test.coverage" NAME="private_s3_uploader_test Coverage Results" MODIFIED="1513716425258" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/spider_node_baiduimage$stream_file_downloader.coverage" NAME="stream_file_downloader Coverage Results" MODIFIED="1513714223887" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/spider_node_baiduimage$Unnamed.coverage" NAME="utiltest Coverage Results" MODIFIED="1513707967308" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/spider_node_baiduimage$private_database_test.coverage" NAME="private_database_test Coverage Results" MODIFIED="1513718317927" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/spider_node_baiduimage$baiduutiltest.coverage" NAME="baiduutiltest Coverage Results" MODIFIED="1513707869760" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/spider_node_baiduimage$baidu_response_parser.coverage" NAME="baidu_response_parser Coverage Results" MODIFIED="1513708033628" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <expand />
+    <select />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="spider_node_baiduimage" />
@@ -59,17 +69,18 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/bsimagespider/downloader/baidudownloader.py" />
         <option value="$PROJECT_DIR$/run.py" />
+        <option value="$PROJECT_DIR$/bsimagespider/storer/data_model.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/bsimagespider/downloader/uploader/S3Uploader.py" />
         <option value="$PROJECT_DIR$/bsimagespider/downloader/baidu_util.py" />
         <option value="$PROJECT_DIR$/bsimagespider/downloader/util.py" />
-        <option value="$PROJECT_DIR$/bsimagespider/downloader/baidu_downloader.py" />
-        <option value="$PROJECT_DIR$/bsimagespider/storer/data_model.py" />
-        <option value="$PROJECT_DIR$/bsimagespider/parser/baidu_response_parser.py" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/bsimagespider/storer/private_database_test.py" />
-        <option value="$PROJECT_DIR$/bsimagespider/downloader/uploader/S3Uploader.py" />
+        <option value="$PROJECT_DIR$/bsimagespider/downloader/stream_file_downloader.py" />
+        <option value="$PROJECT_DIR$/bsimagespider/uploader/private_s3_uploader_test.py" />
         <option value="$PROJECT_DIR$/bsimagespider/uploader/S3Uploader.py" />
         <option value="$PROJECT_DIR$/bsimagespider/storer/image_database.py" />
-        <option value="$PROJECT_DIR$/bsimagespider/downloader/stream_file_downloader.py" />
+        <option value="$PROJECT_DIR$/bsimagespider/parser/baidu_response_parser.py" />
+        <option value="$PROJECT_DIR$/bsimagespider/downloader/baidu_downloader.py" />
+        <option value="$PROJECT_DIR$/bsimagespider/storer/private_database_test.py" />
       </list>
     </option>
   </component>
@@ -139,19 +150,7 @@
               <item name="spider_node_baiduimage" type="b2602c69:ProjectViewProjectNode" />
               <item name="spider_node_baiduimage" type="462c0819:PsiDirectoryNode" />
               <item name="bsimagespider" type="462c0819:PsiDirectoryNode" />
-              <item name="parser" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spider_node_baiduimage" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spider_node_baiduimage" type="462c0819:PsiDirectoryNode" />
-              <item name="bsimagespider" type="462c0819:PsiDirectoryNode" />
               <item name="storer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spider_node_baiduimage" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spider_node_baiduimage" type="462c0819:PsiDirectoryNode" />
-              <item name="bsimagespider" type="462c0819:PsiDirectoryNode" />
-              <item name="uploader" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -183,7 +182,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.stream_file_downloader">
+  <component name="RunManager" selected="Python tests.private_database_test">
     <configuration name="Unnamed" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -216,7 +215,7 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;bsimagespider.parser.baidu_response_parser.test_good_get_image_extension&quot;" />
+      <option name="_new_target" value="&quot;bsimagespider.parser.baidu_response_parser.test_good&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
     </configuration>
     <configuration name="baiduutiltest" type="tests" factoryName="py.test">
@@ -235,6 +234,38 @@
       <option name="_new_target" value="&quot;bsimagespider.downloader.baidu_util.test_good_request_total_image_of_baidu&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
     </configuration>
+    <configuration name="private_database_test" type="tests" factoryName="py.test">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="C:\Users\xetrafhan\Anaconda3\envs\python36\python.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="spider_node_baiduimage" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;bsimagespider.storer.private_database_test.test_good&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+    </configuration>
+    <configuration name="private_s3_uploader_test" type="tests" factoryName="py.test">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="C:\Users\xetrafhan\Anaconda3\envs\python36\python.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="spider_node_baiduimage" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;bsimagespider.uploader.private_s3_uploader_test.test_good_S3_image_uploader&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+    </configuration>
     <configuration name="stream_file_downloader" type="tests" factoryName="py.test">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -248,7 +279,7 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;bsimagespider.downloader.stream_file_downloader.test_bad_download_image_from_url&quot;" />
+      <option name="_new_target" value="&quot;bsimagespider.downloader.stream_file_downloader.test_good_download_image_from_url&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
     </configuration>
     <configuration name="utiltest" type="tests" factoryName="py.test">
@@ -267,12 +298,14 @@
       <option name="_new_target" value="&quot;bsimagespider.downloader.util.test_request_cookie&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
     </configuration>
-    <list size="5">
+    <list size="7">
       <item index="0" class="java.lang.String" itemvalue="Python.Unnamed" />
       <item index="1" class="java.lang.String" itemvalue="Python tests.utiltest" />
       <item index="2" class="java.lang.String" itemvalue="Python tests.baidu_response_parser" />
-      <item index="3" class="java.lang.String" itemvalue="Python tests.stream_file_downloader" />
-      <item index="4" class="java.lang.String" itemvalue="Python tests.baiduutiltest" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.private_database_test" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.private_s3_uploader_test" />
+      <item index="5" class="java.lang.String" itemvalue="Python tests.stream_file_downloader" />
+      <item index="6" class="java.lang.String" itemvalue="Python tests.baiduutiltest" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
@@ -292,35 +325,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="stream_file_downloader - 2017.12.19 at 15h 39m 05s.xml">
-      <configuration name="stream_file_downloader" configurationId="tests" />
+    <history-entry file="private_database_test - 2017.12.20 at 04h 47m 27s.xml">
+      <configuration name="private_database_test" configurationId="tests" />
     </history-entry>
-    <history-entry file="stream_file_downloader - 2017.12.19 at 15h 40m 07s.xml">
-      <configuration name="stream_file_downloader" configurationId="tests" />
+    <history-entry file="private_database_test - 2017.12.20 at 04h 47m 41s.xml">
+      <configuration name="private_database_test" configurationId="tests" />
     </history-entry>
-    <history-entry file="stream_file_downloader - 2017.12.19 at 15h 41m 06s.xml">
-      <configuration name="stream_file_downloader" configurationId="tests" />
+    <history-entry file="private_database_test - 2017.12.20 at 05h 00m 41s.xml">
+      <configuration name="private_database_test" configurationId="tests" />
     </history-entry>
-    <history-entry file="stream_file_downloader - 2017.12.19 at 15h 41m 12s.xml">
-      <configuration name="stream_file_downloader" configurationId="tests" />
+    <history-entry file="private_database_test - 2017.12.20 at 05h 01m 34s.xml">
+      <configuration name="private_database_test" configurationId="tests" />
     </history-entry>
-    <history-entry file="stream_file_downloader - 2017.12.19 at 15h 41m 41s.xml">
-      <configuration name="stream_file_downloader" configurationId="tests" />
+    <history-entry file="private_database_test - 2017.12.20 at 05h 02m 23s.xml">
+      <configuration name="private_database_test" configurationId="tests" />
     </history-entry>
-    <history-entry file="stream_file_downloader - 2017.12.19 at 15h 42m 34s.xml">
-      <configuration name="stream_file_downloader" configurationId="tests" />
+    <history-entry file="private_database_test - 2017.12.20 at 05h 07m 05s.xml">
+      <configuration name="private_database_test" configurationId="tests" />
     </history-entry>
-    <history-entry file="stream_file_downloader - 2017.12.19 at 15h 43m 28s.xml">
-      <configuration name="stream_file_downloader" configurationId="tests" />
+    <history-entry file="private_database_test - 2017.12.20 at 05h 09m 10s.xml">
+      <configuration name="private_database_test" configurationId="tests" />
     </history-entry>
-    <history-entry file="stream_file_downloader - 2017.12.19 at 15h 43m 46s.xml">
-      <configuration name="stream_file_downloader" configurationId="tests" />
+    <history-entry file="private_database_test - 2017.12.20 at 05h 09m 36s.xml">
+      <configuration name="private_database_test" configurationId="tests" />
     </history-entry>
-    <history-entry file="stream_file_downloader - 2017.12.19 at 15h 44m 29s.xml">
-      <configuration name="stream_file_downloader" configurationId="tests" />
+    <history-entry file="private_database_test - 2017.12.20 at 05h 11m 30s.xml">
+      <configuration name="private_database_test" configurationId="tests" />
     </history-entry>
-    <history-entry file="stream_file_downloader - 2017.12.19 at 15h 44m 55s.xml">
-      <configuration name="stream_file_downloader" configurationId="tests" />
+    <history-entry file="private_database_test - 2017.12.20 at 05h 19m 11s.xml">
+      <configuration name="private_database_test" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -330,7 +363,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.329582" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329582" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23600605" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -356,7 +389,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <option name="time" value="9" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -398,78 +431,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bsimagespider/downloader/baidu_downloader.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2242">
-          <caret line="118" column="12" lean-forward="false" selection-start-line="118" selection-start-column="12" selection-end-line="118" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#53#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bsimagespider/parser/baidu_response_parser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="115" column="0" lean-forward="true" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#86#0" expanded="true" />
-            <element signature="e#160#1301#0" expanded="false" />
-            <element signature="e#2021#3120#0" expanded="false" />
-            <element signature="e#3158#4006#0" expanded="false" />
-            <element signature="e#4049#4876#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
           <caret line="2" column="11" lean-forward="true" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bsimagespider/storer/private_database_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="100" lean-forward="false" selection-start-line="5" selection-start-column="100" selection-end-line="5" selection-end-column="100" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bsimagespider/storer/image_database.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#86#0" expanded="true" />
-            <element signature="e#666#872#0" expanded="false" />
-            <element signature="e#937#1619#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bsimagespider/uploader/S3Uploader.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bsimagespider/downloader/baidu_util.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1193">
-          <caret line="6" column="16" lean-forward="true" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bsimagespider/downloader/util.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="86" column="31" lean-forward="true" selection-start-line="86" selection-start-column="31" selection-end-line="86" selection-end-column="31" />
           <folding />
         </state>
       </provider>
@@ -514,11 +479,129 @@
         </state>
       </provider>
     </entry>
+    <entry file="uml://Python/#C:/Users/xetrafhan/Desktop/gitgot/spider_node_baiduimage/bsimagespider/downloader/baidu_downloader.py">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>Python</ID>
+          <OriginalElement>#C:/Users/xetrafhan/Desktop/gitgot/spider_node_baiduimage/bsimagespider/downloader/baidu_downloader.py</OriginalElement>
+          <nodes>
+            <node x="" y="">_collections_abc.Hashable</node>
+            <node x="" y="">object</node>
+            <node x="" y="">bsimagespider.downloader.baidu_downloader.BaiduDownloader</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="206.0" y="96.5" />
+          <SelectedNodes />
+          <Categories />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bsimagespider/downloader/baidu_util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="68" column="25" lean-forward="true" selection-start-line="68" selection-start-column="25" selection-end-line="68" selection-end-column="25" />
+          <folding>
+            <element signature="e#350#644#0" expanded="false" />
+            <element signature="e#730#2521#0" expanded="false" />
+            <element signature="e#2678#3014#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bsimagespider/downloader/util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="e#262#540#0" expanded="false" />
+            <element signature="e#630#906#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/bsimagespider/downloader/stream_file_downloader.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="33" lean-forward="false" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
+        <state relative-caret-position="418">
+          <caret line="30" column="35" lean-forward="false" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
+          <folding>
+            <element signature="e#143#375#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bsimagespider/uploader/S3Uploader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding>
+            <element signature="e#2151#2526#0" expanded="false" />
+            <element signature="e#2646#2849#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bsimagespider/storer/image_database.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="966">
+          <caret line="83" column="64" lean-forward="false" selection-start-line="83" selection-start-column="64" selection-end-line="83" selection-end-column="64" />
+          <folding>
+            <element signature="e#0#86#0" expanded="true" />
+            <element signature="e#1484#1690#0" expanded="false" />
+            <element signature="e#3358#3720#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bsimagespider/parser/baidu_response_parser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="28" column="51" lean-forward="false" selection-start-line="28" selection-start-column="51" selection-end-line="28" selection-end-column="51" />
+          <folding>
+            <element signature="e#224#318#0" expanded="false" />
+            <element signature="e#383#861#0" expanded="false" />
+            <element signature="e#1126#1301#0" expanded="false" />
+            <element signature="e#1385#1515#0" expanded="false" />
+            <element signature="e#1560#2136#0" expanded="false" />
+            <element signature="e#2173#3272#0" expanded="false" />
+            <element signature="e#3310#4158#0" expanded="false" />
+            <element signature="e#4201#5028#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bsimagespider/uploader/private_s3_uploader_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="18" lean-forward="false" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bsimagespider/downloader/baidu_downloader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="62" column="43" lean-forward="false" selection-start-line="62" selection-start-column="43" selection-end-line="62" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#53#0" expanded="true" />
+            <element signature="e#404#979#0" expanded="false" />
+            <element signature="e#1259#2182#0" expanded="false" />
+            <element signature="e#2211#2558#0" expanded="false" />
+            <element signature="e#2612#3101#0" expanded="false" />
+            <element signature="e#3201#3354#0" expanded="false" />
+            <element signature="e#3470#3898#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bsimagespider/storer/private_database_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding>
+            <element signature="e#333#1569#0" expanded="false" />
+            <element signature="e#1606#2710#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -36,7 +36,7 @@ def init_request(proxydict=None):
 
 # ------ end interface ------
 
-
+# ------ private ------
 class DownloaderUtil:
 
     # @returns: Session object if successful, 1 for Exception
@@ -73,7 +73,7 @@ class DownloaderUtil:
             logging.info("please check your python environment. ")
             s = 1
         return s
-
+# ------ private ------
 
 # ------ unit test ------
 

@@ -75,6 +75,8 @@ class BaiduDownloader:
             logging.error(e)
             raise ConnectionError("Please check your internet connection. ")
 
+        self.save_result_to_memory(json_obj)
+
 
     # prepare a request with good session
     @staticmethod
@@ -94,7 +96,11 @@ class BaiduDownloader:
             retry += 1
             if retry >= 3:
                 raise ConnectionError
-        json_obj = self.parse_response_to_obj(response)
+        try:
+            json_obj = self.parse_response_to_obj(response)
+        except Exception as e:
+            logging.info(e)
+            return []
         return json_obj
 
     # response or 1 for ConnectionError
@@ -111,7 +117,7 @@ class BaiduDownloader:
     # parse response to json dict
     @staticmethod
     def parse_response_to_obj(response):
-        return json.loads(response.text)
+        return json.loads(response.content.decode())
 
     # save json obj to database
     @staticmethod
