@@ -1,3 +1,3 @@
 {
-  "util.py::test_request_cookie": true
+  "stream_file_downloader.py::test_bad_download_image_from_url": true
 }

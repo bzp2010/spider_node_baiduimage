@@ -79,10 +79,7 @@ class DownloaderUtil:
 
 # test with good network condition, if we catch a None, we should raise Exception
 def test_request_cookie():
-    s = init_request(proxydict=None)
-    assert s is not None
-
-    s = request_cookie(s)
+    s = request_cookie(init_request(proxydict=None))
     assert s is not None
     assert hasattr(s, "cookies")
     assert s.cookies is not None
