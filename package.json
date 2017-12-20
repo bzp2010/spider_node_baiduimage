@@ -1,0 +1,7 @@
+{
+  "name": "spider_node_baiduimage",
+  "version": "1.0.0",
+  "dependencies": {
+    "selenium-webdriver": "^3.6.0"
+  }
+}
