@@ -9,7 +9,7 @@ from w3lib.url import url_query_parameter
 # ------ stt interface ------
 # @return: download all image_name with image_url into memory database
 # @ConnectionError: failed to download from baidu.
-def start_download_from_baidu(keyword, threads=100):
+def start_download_from_baidu(keyword, image_database,threads=100):
     if type(threads) is not int:
         raise ValueError("Please give me a valid thread number. :< ")
     if threads >= 1000:
@@ -21,7 +21,7 @@ def start_download_from_baidu(keyword, threads=100):
     if len(keyword) >= 100:
         raise ValueError("Keyword too long. :< ")
 
-    downloader = BaiduDownloader(keyword, threads=1000)
+    downloader = BaiduDownloader(keyword, image_database, threads)
     downloader.run()
     logging.info("Baidu Downloader had finish downloading. ")
 
@@ -31,9 +31,10 @@ def start_download_from_baidu(keyword, threads=100):
 # ------ stt class ------
 
 class BaiduDownloader:
-    def __init__(self, keyword, threads=100):
+    def __init__(self, keyword, image_database, threads=100):
         self.keyword = keyword
         self.threads = threads
+        self.image_database = image_database
 
     # get all urls that need to be scrapped
     def get_urls_from_baidu(self):
@@ -52,6 +53,7 @@ class BaiduDownloader:
 
     def run(self):
         target_urls = self.get_urls_from_baidu()
+
         threads = self.threads
         target_chunks = [target_urls[x:x + 1000] for x in range(0, len(target_urls), 1000)]
         for chunk in target_chunks:
@@ -59,6 +61,7 @@ class BaiduDownloader:
             pool.map(self.save_images_from_url, chunk)
             pool.close()
             pool.join()
+
 
     def save_images_from_url(self, target):
         s = None
@@ -75,7 +78,7 @@ class BaiduDownloader:
             logging.error(e)
             raise ConnectionError("Please check your internet connection. ")
 
-        self.save_result_to_memory(json_obj)
+        self.save_result_to_memory(self.image_database, json_obj)
 
 
     # prepare a request with good session
@@ -121,7 +124,7 @@ class BaiduDownloader:
 
     # save json obj to database
     @staticmethod
-    def save_result_to_memory(json_dict):
-        pass
+    def save_result_to_memory(image_database, json_dict):
+        image_database.json_response_to_memory(json_dict)
 
 # ------ end class ------
