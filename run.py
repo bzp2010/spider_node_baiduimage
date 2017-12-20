@@ -7,17 +7,24 @@ from bsimagespider.storer.image_database import ImageDatabase
 class BSImageSpider:
     def __init__(self, region_name, endpoint_url, aws_access_key_id, aws_secret_access_key, bucket_name, directory,
                  keyword_to_search, threads=100):
-        self.region_name = region_name
-        self.endpoint_url = endpoint_url
-        self.aws_access_key_id = aws_access_key_id
+        self.region_name           = region_name
+        self.endpoint_url          = endpoint_url
+        self.aws_access_key_id     = aws_access_key_id
         self.aws_secret_access_key = aws_secret_access_key
-        self.bucket_name = bucket_name
-        self.directory = directory
-        self.keyword_to_search = keyword_to_search
-        self.threads = threads
+        self.bucket_name           = bucket_name
+        self.directory             = directory
+        self.keyword_to_search     = keyword_to_search
+        self.threads               = threads
 
     def check_and_display_configurations(self):
-        pass
+        print("self.region_name           is: %s "%(self.region_name          ))
+        print("self.endpoint_url          is: %s "%(self.endpoint_url         ))
+        print("self.aws_access_key_id     is: %s "%(self.aws_access_key_id    ))
+        print("self.aws_secret_access_key is: %s "%(self.aws_secret_access_key))
+        print("self.bucket_name           is: %s "%(self.bucket_name          ))
+        print("self.directory             is: %s "%(self.directory            ))
+        print("self.keyword_to_search     is: %s "%(self.keyword_to_search    ))
+        print("self.threads               is: %s "%(self.threads              ))
 
     def init_database(self):
         return ImageDatabase(region_name=self.region_name,
@@ -46,9 +53,11 @@ def main():
     # Threads to use
     threads = int(input("How many threads you want to use? "))
 
-    spider = BSImageSpider(region_name, endpoint_url, aws_access_key_id, aws_secret_access_key, bucket_name, directory, keyword_to_search,threads)
+    spider = BSImageSpider(region_name, endpoint_url, aws_access_key_id, aws_secret_access_key, bucket_name, directory, keyword_to_search, threads)
     database = spider.init_database()
+    print("Start Download images from baidu search engine, please wait... ")
     spider.scrape_baidu_image_and_save_to_memory_database(database)
+    print("Start Uploading images to S3, please wait... ")
     database.upload_images_to_s3()
 
 

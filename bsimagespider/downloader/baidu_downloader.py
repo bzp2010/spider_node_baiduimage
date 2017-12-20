@@ -9,7 +9,7 @@ from w3lib.url import url_query_parameter
 # ------ stt interface ------
 # @return: download all image_name with image_url into memory database
 # @ConnectionError: failed to download from baidu.
-def start_download_from_baidu(keyword, image_database,threads=100):
+def start_download_from_baidu(keyword, image_database, threads=100):
     if type(threads) is not int:
         raise ValueError("Please give me a valid thread number. :< ")
     if threads >= 1000:
@@ -27,6 +27,41 @@ def start_download_from_baidu(keyword, image_database,threads=100):
 
 # ------ end interface ------
 
+# ------ unit test ------
+def test_downloader_get_url_from_baidu():
+    from bsimagespider.storer.image_database import ImageDatabase
+    threads = 100
+    downloader = BaiduDownloader("滑稽", ImageDatabase(region_name="nyc3",
+                             endpoint_url='https://nyc3.digitaloceanspaces.com',
+                             aws_access_key_id='A6LS4MC6FKL4G536NPBU',
+                             aws_secret_access_key='2v8y2hx8X71GHgcuWz1nVMRHtAX47ZlBKGQPpWRosmg',
+                             bucket_name="xetra-database",
+                             directory="test2/", uploading_threads=threads), threads)
+    urls = downloader.get_urls_from_baidu()
+    assert len(urls) >= 25
+    assert type(urls) is list
+
+def test_save_image_from_url():
+    from bsimagespider.storer.image_database import ImageDatabase
+    from bsimagespider.storer.image_database import DataModel
+    threads = 100
+    downloader = BaiduDownloader("滑稽", ImageDatabase(region_name="nyc3",
+                                                     endpoint_url='https://nyc3.digitaloceanspaces.com',
+                                                     aws_access_key_id='A6LS4MC6FKL4G536NPBU',
+                                                     aws_secret_access_key='2v8y2hx8X71GHgcuWz1nVMRHtAX47ZlBKGQPpWRosmg',
+                                                     bucket_name="xetra-database",
+                                                     directory="test2/", uploading_threads=threads), threads)
+    urls = downloader.get_urls_from_baidu()
+    assert len(urls) >= 25
+    assert type(urls) is list
+    downloader.save_images_from_url(urls[0])
+    images = DataModel.select()
+    assert type(images[0].image_url) is str
+    assert type(images[0].image_name) is str
+    assert len(images[0].image_url) > 10
+    assert len(images[0].image_name) > 10
+
+# ------ unit test ------
 
 # ------ stt class ------
 
@@ -40,7 +75,7 @@ class BaiduDownloader:
     def get_urls_from_baidu(self):
         target_urls = []
         step = 30
-        total_images = baidu_util.get_total_image_of_baidu_engine(BaiduDownloader.prepare_a_request())
+        total_images = baidu_util.get_total_image_of_baidu_engine(BaiduDownloader.prepare_a_request(), self.keyword)
         total_steps = int(total_images/step)+1
         keyword = self.keyword
         raw_url = """https://image.baidu.com/search/acjson?tn=resultjson_com&ipn=rj&ct=201326592&is=&fp=result&queryWord=%E6%BB%91%E7%A8%BD&cl=2&lm=-1&ie=utf-8&oe=utf-8&adpicid=&st=-1&z=&ic=0&word=%E6%BB%91%E7%A8%BD&s=&se=&tab=&width=&height=&face=0&istype=2&qc=&nc=1&fr=&pn=90&rn=30&gsm=5a&1513615762697="""
@@ -48,7 +83,7 @@ class BaiduDownloader:
         new_url_with_keyword = w3lib.url.add_or_replace_parameter(new_url_with_keyword, "word", str(keyword))
         for p in range(total_steps):
             pn = p*step
-            target_urls += w3lib.url.add_or_replace_parameter(new_url_with_keyword, "pn", str(pn))
+            target_urls.append(w3lib.url.add_or_replace_parameter(new_url_with_keyword, "pn", str(pn)))
         return target_urls
 
     def run(self):
@@ -61,7 +96,6 @@ class BaiduDownloader:
             pool.map(self.save_images_from_url, chunk)
             pool.close()
             pool.join()
-
 
     def save_images_from_url(self, target):
         s = None
@@ -79,7 +113,6 @@ class BaiduDownloader:
             raise ConnectionError("Please check your internet connection. ")
 
         self.save_result_to_memory(self.image_database, json_obj)
-
 
     # prepare a request with good session
     @staticmethod
